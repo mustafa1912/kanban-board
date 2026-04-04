@@ -41,12 +41,13 @@
 
 .main-boards {
   background-color: #f0f2f7;
-      height: 100vh;
+  height: 100%;
 }
 .boards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 50px;
+  align-items: start;
 }
 
 /* end Board */

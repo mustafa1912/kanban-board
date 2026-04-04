@@ -3,76 +3,19 @@ import Column from './Column'
 import { UseTasks } from '../../Hooks/UseTasks';
 
 function Board() {
+    const { data, isLoading, error } = UseTasks();
 
-    const tasks = useMemo(() => [
-        {
-            id: 1,
-            title: "Design UI",
-            description: "Make dashboard layout",
-            priority: "Low",
-            column: "backlog",
-        },
-        {
-            id: 1,
-            title: "Design UI",
-            description: "Make dashboard layout",
-            priority: "Low",
-            column: "backlog",
-        },
-        {
-            id: 2,
-            title: "API Integration",
-            description: "Connect backend",
-            priority: "Medium",
-            column: "in_progress"
-        },
-        {
-            id: 3,
-            title: "API Integration",
-            description: "Connect backend",
-            priority: "Medium",
-            column: "in_progress"
-        }
-        ,
-        {
-            id: 4,
-            title: "uthentication flow",
-            description: "Connect backend",
-            priority: "Low",
-            column: "in_progress"
-        }
-        ,
-        {
-            id: 5,
-            title: "  ark mode support",
-            description: "Connect backend",
-            priority: "Medium",
-            column: "done"
-        }
-        ,
-        {
-            id: 6,
-            title: "ile upload component ",
-            description: "Connect backend",
-            priority: "Low",
-            column: "in_review"
-        }
-        ,
-        {
-            id: 6,
-            title: "ile upload component ",
-            description: "Connect backend",
-            priority: "Low",
-            column: "in_review"
-        }
-    ], []);
+    if (isLoading) return <p>Loading...</p>;
+    if (error) return <p>Error...</p>;
 
-    const COLS = useMemo(() => [
+    const tasks = data?.data || [];
+
+    const COLS = [
         { id: '1', type: 'backlog', label: 'Backlog', color: '#6366f1', },
         { id: '2', type: 'in_progress', label: 'In Progress', color: '#f59e0b', },
         { id: '3', type: 'in_review', label: 'In Review', color: '#ec4899', },
         { id: '4', type: 'done', label: 'Done', color: '#10b981', },
-    ], []);
+    ];
 
 
 
@@ -81,8 +24,9 @@ function Board() {
             <div className='d-flex align-items-center gap-4'>
                 {COLS.map((item) => (
                     <div key={item.id}>
-                        <span span style={{ backgroundColor: item.color }} className='color-dot me-2'></span >
-                        <span className='color-label'>{item.label}: <strong> {tasks.filter(itemTask => itemTask.column === item.type).length} </strong></span>
+                        <span style={{ backgroundColor: item.color }} className='color-dot me-2'></span >
+                        <span className='color-label'>{item.label}: <strong> {tasks.filter(itemTask => itemTask.column === item.type).length}
+                        </strong></span>
                     </div>
                 ))
                 }

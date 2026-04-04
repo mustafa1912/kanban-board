@@ -1,11 +1,15 @@
 import Home from './pages/Home'
+import { ModalProvider } from './context/ModalContext'
+
 // style
 import './App.css'
 
 function App() {
 
   return (
-    <Home />
+    <ModalProvider>
+      <Home />
+    </ModalProvider>
   )
 }
 

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Navbar as BSNavbar, Container, Form, InputGroup, Button, ProgressBar } from 'react-bootstrap'
 import { VscAdd } from "react-icons/vsc";
 import { FcSearch } from "react-icons/fc";
-import NewTaskModal from './NewTaskModal';
+import TaskModal from './Modal/TaskModal';
 
 function SearchBar() {
     const [show, setShow] = useState(false);
@@ -50,7 +50,7 @@ function SearchBar() {
                     className="ms-auto fw-bold btn-add-task" onClick={handleShow} >
                     <VscAdd />  New Task
                 </Button>
-                <NewTaskModal show={show} onHide={handleClose}></NewTaskModal>
+                <TaskModal show={show} onHide={handleClose}></TaskModal>
             </Container>
         </BSNavbar>
     )

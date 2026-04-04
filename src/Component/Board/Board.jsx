@@ -1,8 +1,9 @@
 import React, { useMemo } from 'react'
 import Column from './Column'
-
+import { UseTasks } from '../../Hooks/UseTasks';
 
 function Board() {
+
     const tasks = useMemo(() => [
         {
             id: 1,

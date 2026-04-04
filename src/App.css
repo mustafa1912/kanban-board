@@ -1,0 +1,90 @@
+/* start nav-bar */
+.nav-bar .main-icon {
+  width: 40px;
+  height: 40px;
+  font-size: 25px !important;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+}
+.nav-bar .title {
+  font-size: 13px;
+}
+.nav-bar .tasks {
+  font-size: 11px;
+}
+.nav-bar .ProgressBar {
+  width: 70px;
+  height: 5px;
+}
+.nav-bar .search-from {
+  flex: 1;
+  max-width: 380px;
+}
+.nav-bar .btn-add-task {
+  background: "linear-gradient(135deg,#6366f1,#8b5cf6)";
+  border: "none";
+  fontsize: 12;
+  boxshadow: "0 4px 12px rgba(99,102,241,.3)";
+}
+/* end nav-bar */
+
+/* start Board */
+.color-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 99px;
+}
+.color-label {
+  font-size: 12px;
+  color: rgb(100, 116, 139);
+}
+
+.main-boards {
+  background-color: #f0f2f7;
+      height: 100vh;
+}
+.boards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 50px;
+}
+
+/* end Board */
+
+.column {
+  background-color: #f8f9fc;
+}
+
+/* start Task */
+.column .card {
+  width: 90%;
+  border-color: #ededed;
+}
+.btn-edit,
+.btn-del {
+  border: none;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 11px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.btn-edit {
+  background: rgb(239, 246, 255);
+  color: rgb(59, 130, 246);
+}
+.btn-del {
+  background: rgb(254, 242, 242);
+  color: rgb(239, 68, 68);
+}
+.btn-priority {
+  background: rgb(255, 251, 235);
+  color: rgb(180, 83, 9);
+  border: 1px solid rgb(253, 230, 138);
+  padding: 2px 8px;
+  border-radius: 99px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+/* end Task */

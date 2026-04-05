@@ -5,7 +5,7 @@ const ModalContext = createContext();
 export const ModalProvider = ({ children }) => {
     const [show, setShow] = useState(false);
     const [selectedTask, setSelectedTask] = useState(null);
-    const [modalType, setModalType] = useState(null); // 👈 دي الناقصة
+    const [modalType, setModalType] = useState(null); 
 
     const openEdit = (task) => {
         setSelectedTask(task);

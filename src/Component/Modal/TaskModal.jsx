@@ -18,7 +18,7 @@ const COLS = [
 
 function TaskModal({ onHide, task = null }) {
     const queryClient = useQueryClient();
-    const { show } = useModal();
+    const { show } = useModal(); 
 
     const isEdit = !!task?.id;
 

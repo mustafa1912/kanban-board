@@ -6,6 +6,7 @@ import Task from './Task';
 function Column({ type, item, tasks }) {
     const filteredTasks = tasks.filter(task => task.column === type);
 
+    
     return (
         <div className="column d-flex flex-column p-3" >
 
@@ -20,7 +21,7 @@ function Column({ type, item, tasks }) {
             </div>
             {filteredTasks.map(item => (
                 <div key={item.id} className="my-2">
-                    <Task task={item} />
+                    <Task task={item}  />
                 </div>
             ))}
 

@@ -5,7 +5,8 @@ import Card from 'react-bootstrap/Card';
 import { useModal } from '../../context/ModalContext';
 
 function Task({ task }) {
-    const { openModal } = useModal();
+    const { openEdit } = useModal();
+    const { openDelete } = useModal();
 
     return (
         <>
@@ -19,11 +20,12 @@ function Task({ task }) {
                         <button className='btn-priority'>{task.priority}</button>
                         <div className="d-flex gap-2">
                             <Button
-                                className='btn-edit' onClick={() => openModal(task)}>
+                                className='btn-edit' onClick={() => openEdit(task)}
+                            >
                                 edit
                             </Button>
                             <Button
-                                className='btn-del' >
+                                className='btn-del' onClick={() => openDelete(task)} >
                                 del
                             </Button>
                         </div>

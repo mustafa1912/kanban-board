@@ -9,7 +9,7 @@ function SearchBar() {
     const tasks = data?.data || [];
     const donTasks = tasks.filter(itemTask => itemTask.column === 'done')
 
-    const { openModal } = useModal();
+    const { openEdit } = useModal();
 
     return (
         <BSNavbar bg="white" className="nav-bar border-bottom shadow-sm sticky-top py-2">
@@ -47,7 +47,7 @@ function SearchBar() {
                 </div>
                 <Button
                     className="ms-auto fw-bold btn-add-task"
-                    onClick={() => openModal()}> +  New Task
+                    onClick={() => openEdit()}> +  New Task
                 </Button>
             </Container>
         </BSNavbar>

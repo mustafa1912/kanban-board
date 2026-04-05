@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Board from '../Component/Board/Board'
-import SearchBar from '../Component/SearchBar'
+import SearchBar from '../Component/NavhBar'
 import TaskModal from '../Component/Modal/TaskModal'
 import DeleteModal from '../Component/Modal/DeletModal';
 

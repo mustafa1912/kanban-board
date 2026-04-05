@@ -2,7 +2,7 @@ import Home from './pages/Home'
 import { ModalProvider } from './context/ModalContext'
 
 // style
-import './App.css'
+import './style/app.css'
 
 function App() {
 

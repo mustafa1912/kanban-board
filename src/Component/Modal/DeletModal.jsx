@@ -1,10 +1,15 @@
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import { UseDeleteTask } from '../../Hooks/UseDeleteTask';
 
-function DeleteModal({ show, onHide, task, onConfirm }) {
+function DeleteModal({ show, onHide, task }) {
+    const { mutate: deleteTask, isPending } = UseDeleteTask();
+
     const handleDelete = () => {
-        // onConfirm(task.id);
-        onHide();
+        if (!task?.id) return;
+        deleteTask(task.id, {
+            onSuccess: () => onHide(),
+        });
     };
 
     return (
@@ -15,18 +20,18 @@ function DeleteModal({ show, onHide, task, onConfirm }) {
 
             <Modal.Body>
                 <p>
-                    Are you sure you want to delete it
-                    <strong className='text-danger'> {task?.title} </strong> ?
+                    Are you sure you want to delete
+                    <strong className='text-danger'> {task?.title} </strong>?
                 </p>
             </Modal.Body>
 
             <Modal.Footer>
-                <Button variant="light" onClick={onHide}>
+                <Button variant="light" onClick={onHide} disabled={isPending}>
                     Cancel
                 </Button>
 
-                <Button variant="danger" onClick={handleDelete}>
-                    Delete
+                <Button variant="danger" onClick={handleDelete} disabled={isPending}>
+                    {isPending ? 'Deleting...' : 'Delete'}
                 </Button>
             </Modal.Footer>
         </Modal>

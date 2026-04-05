@@ -4,14 +4,14 @@
       "id": "1",
       "title": "API integration",
       "description": "Connect frontend to REST API endpoints",
-      "column": "backlog",
+      "column": "in_progress",
       "priority": "high"
     },
     {
       "id": "2",
       "title": "Unit tests",
       "description": "Write tests for utility functions and hooks",
-      "column": "backlog",
+      "column": "done",
       "priority": "low"
     },
     {
@@ -32,7 +32,7 @@
       "id": "5",
       "title": "User settings page",
       "description": "Profile editing, preferences, account management",
-      "column": "backlog",
+      "column": "in_review",
       "priority": "low"
     },
     {
@@ -41,13 +41,6 @@
       "description": "Login, signup, and password reset screens",
       "column": "in_progress",
       "priority": "high"
-    },
-    {
-      "id": "7",
-      "title": "File upload component",
-      "description": "Drag and drop file upload with preview",
-      "column": "in_progress",
-      "priority": "medium"
     },
     {
       "id": "8",
